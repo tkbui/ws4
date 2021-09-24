@@ -1,0 +1,269 @@
+T.K. Bui | CS 185C | Worksheet 4, due 9/23/2021
+======================================================================================================================
+Script started on 2021-09-23 23:11:29+00:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="189" LINES="52"]
+
+**NOTE: This file was edited in order to clean up binary characters and extra, unneeded stuff.
+
+----------------------------------------------------------------------------------------------------------------------
+CREATING THE "CUSTOMERS" AND "PRODUCTS" DIRECTORIES
+
+bui@f6linuxA7:~$ mkdir CUSTOMERS
+
+bui@f6linuxA7:~$ mkdir PRODUCTS
+
+----------------------------------------------------------------------------------------------------------------------
+EXTRACTING THE HELPFULNESS SCORES FOR 3 DIFFERENT CUSTOMER IDS INTO THEIR OWN FILES
+(CUSTOMER IDS: 52420369, 51964897, 53000124)
+
+bui@f6linuxA7:~$ egrep $'\t''52420369'$'\t' amazon_reviews_us_Books_v1_02.tsv | cut -f 9 > CUSTOMERS/52420369.txt 
+
+bui@f6linuxA7:~$ egrep $'\t''51964897'$'\t' amazon_reviews_us_Books_v1_02.tsv | cut -f 9 > CUSTOMERS/51964897.txt
+
+bui@f6linuxA7:~$ egrep $'\t''53000124'$'\t' amazon_reviews_us_Books_v1_02.tsv | cut -f 9 > CUSTOMERS/53000124.txt
+
+----------------------------------------------------------------------------------------------------------------------
+EXTRACTING THE HELPFULNESS SCORES FOR 3 DIFFERENT PRODUCT IDS INTO THEIR OWN FILES
+(PRODUCT IDS: 0385730586, 0811828964, 1844161560)
+
+bui@f6linuxA7:~$ egrep $'\t''0385730586'$'\t' amazon_reviews_us_Books_v1_02.tsv | cut -f 9 > PRODUCTS/0385730586.txt
+
+bui@f6linuxA7:~$ egrep $'\t''0811828964'$'\t' amazon_reviews_us_Books_v1_02.tsv | cut -f 9 > PRODUCTS/0811828964.txt
+
+bui@f6linuxA7:~$ egrep $'\t''1844161560'$'\t' amazon_reviews_us_Books_v1_02.tsv | cut -f 9 > PRODUCTS/1844161560.txt
+
+======================================================================================================================
+FINDING MEAN AND VARIANCE OF HELPFULNESS VALUES OF SELECTED CUSTOMER IDS
+**NOTE: For all variances, I do $total / ($count - 1), in accordance to the variance equation from the
+following Google search: https://www.google.com/search?client=firefox-b-1-d&q=variance+equation
+
+bui@f6linuxA7:~$ ls
+CUSTOMERS  PRODUCTS  amazon_reviews_us_Books_v1_02.tsv  assignments  worksheets  ws4.txt
+
+bui@f6linuxA7:~$ cd CUSTOMERS/
+
+bui@f6linuxA7:~/CUSTOMERS$ ls
+51964897.txt  52420369.txt  53000124.txt
+
+bui@f6linuxA7:~/CUSTOMERS$ ls -altr
+total 20
+drwxr-xr-x 8 bui bui 4096 Sep 23 23:11 ..
+-rw-rw-r-- 1 bui bui   26 Sep 23 23:15 52420369.txt
+-rw-rw-r-- 1 bui bui   21 Sep 23 23:17 51964897.txt
+drwxrwxr-x 2 bui bui 4096 Sep 23 23:19 .
+-rw-rw-r-- 1 bui bui  244 Sep 23 23:19 53000124.txt
+
+----------------------------------------------------------------------------------------------------------------------
+1) Mean and variance for customer ID: 52420369
+
+bui@f6linuxA7:~/CUSTOMERS$ count=0; total=0;
+
+bui@f6linuxA7:~/CUSTOMERS$ for i in `cat 52420369.txt`; do total=$(echo $total+$i | bc ); ((count++)); done
+
+bui@f6linuxA7:~/CUSTOMERS$ echo $total
+23
+
+bui@f6linuxA7:~/CUSTOMERS$ echo $count
+13
+
+bui@f6linuxA7:~/CUSTOMERS$ echo "scale=2; $total / $count" | bc
+1.76
+
+bui@f6linuxA7:~/CUSTOMERS$ count=0; total=0;
+
+bui@f6linuxA7:~/CUSTOMERS$ for i in `cat 52420369.txt`; do total=$(echo $total+($i-1.76)^2 | bc ); ((count++)); done
+
+bui@f6linuxA7:~/CUSTOMERS$ echo $total
+58.21
+
+bui@f6linuxA7:~/CUSTOMERS$ echo $count
+13
+
+bui@f6linuxA7:~/CUSTOMERS$ echo "scale=2; $total / ($count - 1)" | bc
+4.85
+
+EXPLANATION: For customer ID #52420369, the mean is 1.76 and the variance is 4.85.
+
+----------------------------------------------------------------------------------------------------------------------
+2) Mean and variance for customer ID: 51964897
+
+bui@f6linuxA7:~/CUSTOMERS$ count=0; total=0;
+
+bui@f6linuxA7:~/CUSTOMERS$ for i in `cat 51964897.txt`; do total=$(echo $total+$i | bc ); ((count++)); done
+
+bui@f6linuxA7:~/CUSTOMERS$ echo $total
+253
+
+bui@f6linuxA7:~/CUSTOMERS$ echo $count
+8
+
+bui@f6linuxA7:~/CUSTOMERS$ echo "scale=2; $total / $count" | bc
+31.62
+
+bui@f6linuxA7:~/CUSTOMERS$ count=0; total=0;
+
+bui@f6linuxA7:~/CUSTOMERS$ for i in `cat 51964897.txt`; do total=$(echo $total+($i-31.62)^2 | bc ); ((count++)); done
+
+bui@f6linuxA7:~/CUSTOMERS$ echo $total
+20525.84
+
+bui@f6linuxA7:~/CUSTOMERS$ echo $count
+8
+
+bui@f6linuxA7:~/CUSTOMERS$ echo "scale=2; $total / ($count - 1)" | bc
+2932.26
+
+EXPLANATION: For customer ID #51964897, the mean is 31.62 and the variance is 2932.26.
+
+----------------------------------------------------------------------------------------------------------------------
+3) Mean and variance for customer ID: 53000124
+
+bui@f6linuxA7:~/CUSTOMERS$ count=0; total=0;
+
+bui@f6linuxA7:~/CUSTOMERS$ for i in `cat 53000124.txt`; do total=$(echo $total+$i | bc ); ((count++)); done
+
+bui@f6linuxA7:~/CUSTOMERS$ echo $total
+1198
+
+bui@f6linuxA7:~/CUSTOMERS$ echo $count
+107
+
+bui@f6linuxA7:~/CUSTOMERS$ echo "scale=2; $total / $count" | bc
+11.19
+
+bui@f6linuxA7:~/CUSTOMERS$ count=0; total=0;
+
+bui@f6linuxA7:~/CUSTOMERS$ echo $count
+0
+
+bui@f6linuxA7:~/CUSTOMERS$ for i in `cat 53000124.txt`; do total=$(echo $total+($i-11.19)^2 | bc ); ((count++)); done
+
+bui@f6linuxA7:~/CUSTOMERS$ echo $count
+107
+
+bui@f6linuxA7:~/CUSTOMERS$ echo $total
+42252.23
+
+bui@f6linuxA7:~/CUSTOMERS$ echo "scale=2; $total / ($count - 1)" | bc
+398.60
+
+EXPLANATION: For customer ID #53000124, the mean is 11.19 and the variance is 398.60.
+
+======================================================================================================================
+FINDING MEAN AND VARIANCE OF HELPFULNESS VALUES OF SELECTED PRODUCT IDS
+**NOTE: For all variances, I do $total / ($count - 1), in accordance to the variance equation from the
+following Google search: https://www.google.com/search?client=firefox-b-1-d&q=variance+equation
+
+bui@f6linuxA7:~/CUSTOMERS$ count=0; total=0;
+
+bui@f6linuxA7:~/CUSTOMERS$ cd ..
+
+bui@f6linuxA7:~$ cd PRODUCTS/
+
+bui@f6linuxA7:~/PRODUCTS$ echo $total
+0
+
+bui@f6linuxA7:~/PRODUCTS$ ls
+0385730586.txt  0811828964.txt  1844161560.txt
+
+----------------------------------------------------------------------------------------------------------------------
+4) Mean and variance for product ID: 0385730586
+
+bui@f6linuxA7:~/PRODUCTS$ for i in `cat 0385730586.txt`; do total=$(echo $total+$i | bc ); ((count++)); done
+
+bui@f6linuxA7:~/PRODUCTS$ echo $total
+568
+
+bui@f6linuxA7:~/PRODUCTS$ echo $count
+304
+
+bui@f6linuxA7:~/PRODUCTS$ echo "scale=2; $total / $count" | bc
+1.86
+
+bui@f6linuxA7:~/PRODUCTS$ count=0; total=0;
+
+bui@f6linuxA7:~/PRODUCTS$ echo $count
+0
+
+bui@f6linuxA7:~/PRODUCTS$ for i in `cat 0385730586.txt`; do total=$(echo $total+($i-1.86)^2 | bc ); ((count++)); done
+
+bui@f6linuxA7:~/PRODUCTS$ echo $count
+304
+
+bui@f6linuxA7:~/PRODUCTS$ echo "scale=2; $total / ($count - 1)" | bc
+114.50
+
+EXPLANATION: For product ID #0385730586, the mean is 1.86 and the variance is 114.50.
+
+----------------------------------------------------------------------------------------------------------------------
+5) Mean and variance for product ID: 0811828964
+
+bui@f6linuxA7:~/PRODUCTS$ count=0; total=0;
+
+bui@f6linuxA7:~/PRODUCTS$ echo $count
+0
+
+bui@f6linuxA7:~/PRODUCTS$ for i in `cat 0811828964.txt`; do total=$(echo $total+$i | bc ); ((count++)); done
+
+bui@f6linuxA7:~/PRODUCTS$ echo $count
+73
+
+bui@f6linuxA7:~/PRODUCTS$ echo $total
+263
+
+bui@f6linuxA7:~/PRODUCTS$ echo "scale=2; $total / $count" | bc
+3.60
+
+bui@f6linuxA7:~/PRODUCTS$ count=0; total=0;
+
+bui@f6linuxA7:~/PRODUCTS$ echo $count
+0
+
+bui@f6linuxA7:~/PRODUCTS$ for i in `cat 0811828964.txt`; do total=$(echo $total+($i-3.60)^2 | bc ); ((count++)); done
+
+bui@f6linuxA7:~/PRODUCTS$ echo $count
+73
+
+bui@f6linuxA7:~/PRODUCTS$ echo "scale=2; $total / ($count - 1)" | bc
+34.46
+
+EXPLANATION: For product ID #0811828964, the mean is 3.60 and the variance is 34.46.
+
+----------------------------------------------------------------------------------------------------------------------
+6) Mean and variance for product ID: 1844161560
+
+bui@f6linuxA7:~/PRODUCTS$ count=0; total=0;
+
+bui@f6linuxA7:~/PRODUCTS$ echo $count
+0
+
+bui@f6linuxA7:~/PRODUCTS$ for i in `cat 1844161560.txt`; do total=$(echo $total+$i | bc ); ((count++)); done
+
+bui@f6linuxA7:~/PRODUCTS$ echo $count
+10
+
+bui@f6linuxA7:~/PRODUCTS$ echo "scale=2; $total / $count" | bc
+20.70
+
+bui@f6linuxA7:~/PRODUCTS$ echo $total
+207
+
+bui@f6linuxA7:~/PRODUCTS$ count=0; total=0;
+
+bui@f6linuxA7:~/PRODUCTS$ for i in `cat 1844161560.txt`; do total=$(echo $total+($i-20.70)^2 | bc ); ((count++)); done
+
+bui@f6linuxA7:~/PRODUCTS$ echo $count
+10
+
+bui@f6linuxA7:~/PRODUCTS$ echo "scale=2; $total / ($count - 1)" | bc
+920.90
+
+EXPLANATION: For product ID #1844161560, the mean is 20.70 and the variance is 920.90.
+
+======================================================================================================================
+FINAL COMMANDS: Getting the history of commands. The README.txt file was created after.
+
+bui@f6linuxA7:~/PRODUCTS$ cd ..
+
+bui@f6linuxA7:~$ history > cmds.log
+
+Script done on 2021-09-23 23:35:38+00:00 [COMMAND_EXIT_CODE="0"]

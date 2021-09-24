@@ -1,0 +1,674 @@
+    1  ls
+    2  wget https://s3.amazonaws.com/amazon-reviews-pds/tsv/amazon_reviews_us_Books_v1_02.tsv.gz
+    3  ls
+    4  mkdir worksheets
+    5  cd worksheets/
+    6  mkdir ws1
+    7  cd ws1/
+    8  git --version
+    9  git init
+   10  touch examplefile.txt
+   11  ls
+   12  git status
+   13  git remote add origin https://github.com/tkbui/ws1.git
+   14  history > cmds.log
+   15  ls
+   16  cat cmds.log 
+   17  git status
+   18  git add cmds.log
+   19  git status
+   20  git commit -m "Updated cmds.log on new server."
+   21  git config --global user.email "thuykhuongbui@gmail.com"
+   22  git config --global user.name "tkbui"
+   23  history > cmds.log
+   24  cat cmds.log 
+   25  git commit -m "Updated cmds.log on new server."
+   26  git push -u origin master
+   27  git pull origin master
+   28  ls
+   29  cat cmds.log 
+   30  git clone https://github.com/tkbui/ws1.git
+   31  ls
+   32  cd ..
+   33  git clone https://github.com/tkbui/ws1.git
+   34  rm -r ws1
+   35  cd ws1/
+   36  rm -r ws1
+   37  ls
+   38  rm -r /ws1
+   39  ls
+   40  rm -r ws1/
+   41  y
+   42  yls
+   43  ls
+   44  cd ..
+   45  ls
+   46  rm ws1/
+   47  rm -r ws1/
+   48  ls
+   49  git clone https://github.com/tkbui/ws1.git
+   50  ls
+   51  cd ws1/
+   52  ls
+   53  touch examplefile.txt
+   54  history > cmds.log
+   55  cat cmds.log 
+   56  ls
+   57  git status
+   58  git add cmds.log
+   59  git status
+   60  git push -u origin master
+   61  git commit -m "Updated cmds.log on new server."
+   62  git status
+   63  git push -u origin master
+   64  git pull origin master
+   65  passwd
+   66  history > cmds.log
+   67  cat cmds.log 
+   68  git status
+   69  git add cmds.log
+   70  git status
+   71  git commit -m "Updated password, so updated the cmds.log to reflect this if needed for worksheet 1."
+   72  git status
+   73  git push -u origin master
+   74  ls
+   75  git pull origin master
+   76  exit
+   77  ls
+   78  man gzip
+   79  gunzip amazon_reviews_us_Books_v1_02.tsv.gz 
+   80  ls
+   81  echo `pwd`
+   82  cat amazon_reviews_us_Books_v1_02.tsv 
+   83  man grep
+   84  grep "Sisterhood of the Traveling Pants (Book 1)" amazon_reviews_us_Books_v1_02.tsv 
+   85  grep Y amazon_reviews_us_Books_v1_02.tsv 
+   86  grep "Y" amazon_reviews_us_Books_v1_02.tsv 
+   87  exit
+   88  man egrep
+   89  cat amazon_reviews_us_Books_v1_02.tsv 
+   90  grep "^[a-zA-Z]+" amazon_reviews_us_Books_v1_02.tsv 
+   91  head 2 grep "^[a-zA-Z]+" amazon_reviews_us_Books_v1_02.tsv 
+   92  head 2 grep "Sisterhood of the Traveling Pants (Book 1)" amazon_reviews_us_Books_v1_02.tsv 
+   93  head 2 amazon_reviews_us_Books_v1_02.tsv 
+   94  head -2 amazon_reviews_us_Books_v1_02.tsv 
+   95  head -2 grep "US" amazon_reviews_us_Books_v1_02.tsv 
+   96  grep "^US" amazon_reviews_us_Books_v1_02.tsv 
+   97  grep "^[a-zA-Z]*[0-9]*" amazon_reviews_us_Books_v1_02.tsv 
+   98  grep "^[a-zA-Z]*[0-9]+" amazon_reviews_us_Books_v1_02.tsv 
+   99  grep "^[a-zA-Z]+[\s]+[0-9]+" amazon_reviews_us_Books_v1_02.tsv 
+  100  grep "^[a-zA-Z]+\s+[0-9]+" amazon_reviews_us_Books_v1_02.tsv 
+  101  grep "^[a-zA-Z]+[\t]+[0-9]+" amazon_reviews_us_Books_v1_02.tsv 
+  102  grep "^[a-zA-Z ]+[0-9]+" amazon_reviews_us_Books_v1_02.tsv 
+  103  grep "^[a-zA-Z\s]+[0-9]+" amazon_reviews_us_Books_v1_02.tsv 
+  104  grep "^[a-zA-Z]*[0-9]+" amazon_reviews_us_Books_v1_02.tsv 
+  105  grep "^[a-zA-Z]*" amazon_reviews_us_Books_v1_02.tsv 
+  106  grep "^[a-zA-Z]*[0-9]*" amazon_reviews_us_Books_v1_02.tsv 
+  107  grep "^[a-zA-Z]*[0-9]+" amazon_reviews_us_Books_v1_02.tsv 
+  108  grep "^[a-zA-Z]*.[0-9]+" amazon_reviews_us_Books_v1_02.tsv 
+  109  grep "^[a-zA-Z]*.[\s]+" amazon_reviews_us_Books_v1_02.tsv 
+  110  grep "[\s]+" amazon_reviews_us_Books_v1_02.tsv 
+  111  grep "[ ]+" amazon_reviews_us_Books_v1_02.tsv 
+  112  grep [ ]+ amazon_reviews_us_Books_v1_02.tsv 
+  113  grep "[\t]+" amazon_reviews_us_Books_v1_02.tsv 
+  114  grep \s amazon_reviews_us_Books_v1_02.tsv 
+  115  grep " " amazon_reviews_us_Books_v1_02.tsv 
+  116  grep "^[a-zA-Z]  " amazon_reviews_us_Books_v1_02.tsv 
+  117  grep "^[a-zA-Z]+ $ " amazon_reviews_us_Books_v1_02.tsv 
+  118  egrep "^[a-zA-Z]+[\s]+.*$" amazon_reviews_us_Books_v1_02.tsv 
+  119  egrep "^[a-zA-Z]*.[0-9]$" amazon_reviews_us_Books_v1_02.tsv 
+  120  egrep "^[a-zA-Z]*.[0-9]*$" amazon_reviews_us_Books_v1_02.tsv 
+  121  egrep "^[a-zA-Z]" amazon_reviews_us_Books_v1_02.tsv 
+  122  egrep "^[a-zA-Z]+" amazon_reviews_us_Books_v1_02.tsv 
+  123  egrep "^[a-zA-Z]+[\s]" amazon_reviews_us_Books_v1_02.tsv 
+  124  egrep "^[a-zA-Z]+[[:space:]]" amazon_reviews_us_Books_v1_02.tsv 
+  125  cat history
+  126  ls
+  127  history > commands.log
+  128  cat commands.log 
+  129  egrep "^[a-zA-Z]+[[:space:]]+[0-9]+" amazon_reviews_us_Books_v1_02.tsv 
+  130  egrep "^[a-zA-Z]+[[:space:]]+[0-9]+[[:space:]]+[a-zA-Z0-9]+[[:space:]]+[0-9]+[[:space:]]+[0-9]+[[:space:]]+" amazon_reviews_us_Books_v1_02.tsv 
+  131  egrep "^[a-zA-Z]+[[:space:]]+[0-9]+[[:space:]]+[a-zA-Z0-9]+[[:space:]]+[0-9]+[[:space:]]+[0-9]+[[:space:]]+([a-zA-Z0-9\:&]*[[:space:]]?)*" amazon_reviews_us_Books_v1_02.tsv 
+  132  egrep "^[a-zA-Z]+[[:space:]]+[0-9]+[[:space:]]+[a-zA-Z0-9]+[[:space:]]+[0-9]+[[:space:]]+[0-9]+[[:space:]]+([a-zA-Z0-9\:&]*[[:space:]]{1})*" amazon_reviews_us_Books_v1_02.tsv 
+  133  exit
+  134  grep verified amazon_reviews_us_Books_v1_02.tsv 
+  135  exit
+  136  ls
+  137  grep verified amazon_reviews_us_Books_v1_02.tsv 
+  138  egrep \tY\t amazon_reviews_us_Books_v1_02.tsv 
+  139  egrep "\tY\t" amazon_reviews_us_Books_v1_02.tsv 
+  140  awk -F"\t" '{print $12}' amazon_reviews_us_Books_v1_02.tsv 
+  141  awk -F"\t" '{print $12}' amazon_reviews_us_Books_v1_02.tsv > verified_column.txt
+  142  ls
+  143  grep Y verified_column.txt > verified.txt
+  144  ls
+  145  nano verified.txt 
+  146  grep N verified_column.txt > unverified.txt
+  147  ls
+  148  wc verified.txt
+  149  wc verified.txt > counts.txt
+  150  wc unverified.txt >> counts.txt 
+  151  cat counts.txt 
+  152  nano counts.txt
+  153  fg
+  154  cat counts.txt 
+  155  ls
+  156  cd worksheets/
+  157  ls
+  158  mkdir ws2
+  159  cd ws2
+  160  ls
+  161  git init
+  162  cd ..
+  163  ls
+  164  mv counts.txt ~/worksheets/ws2
+  165  mv unverified.txt ~/worksheets/ws2
+  166  mv verified.txt ~/worksheets/ws2
+  167  mv verified_column.txt ~/worksheets/ws2
+  168  ls
+  169  cd worksheets/
+  170  cd ws2
+  171  ls
+  172  nano counts.txt 
+  173  cat counts.txt 
+  174  history > cmds.log
+  175  cat cmds.log
+  176  git status
+  177  git add counts.txt cmds.log
+  178  git status
+  179  git commit -m "Worksheet 2: Getting the number of verified and unverified reviews from the Amazon dataset by using awk, grep, and wc. Also, showing the command history for these tasks. The history is long due to previous commands for ws1 and testing different ways for finishing this worksheet, but the necessary history starts on cmds.log line 141."
+  180  git status
+  181  git remote add origin https://github.com/tkbui/ws2.git
+  182  git push -u origin master
+  183  git pull origin master
+  184  exit
+  185  echo hello
+  186  pwd ~
+  187  cd /etc/passwd
+  188  cd /
+  189  ls
+  190  cd etc
+  191  ls
+  192  cat passwd
+  193  grep uid passwd
+  194  man id
+  195  id -u
+  196  id -g
+  197  cd ..
+  198  cd bash
+  199  cd bin
+  200  cd bash
+  201  cat bash
+  202  clear
+  203  script a1.txt
+  204  rm a1.txt 
+  205  echo $uid
+  206  $uid
+  207  echo $hom
+  208  echo $home
+  209  echo $UID
+  210  echo $GID
+  211  exit
+  212  echo $HOME
+  213  echo $UID
+  214  id bui
+  215  mkdir temp
+  216  stat temp
+  217  cd temp
+  218  cd ..
+  219  chmod 675 temp
+  220  stat temp
+  221  touch /temp/testfile.txt
+  222  touch temp/testfile.txt
+  223  cd temp
+  224  ls temp
+  225  ls -l temp
+  226  mv temp worksheets
+  227  ls
+  228  cd worksheets
+  229  ls
+  230  cdp temp
+  231  cp temp
+  232  cp temp temp2
+  233  cp -r temp temp2
+  234  ls
+  235  cd /proc
+  236  ls
+  237  head meminfo
+  238  tail cpuinfo
+  239  cd ~
+  240  stat amazon_reviews_us_Books_v1_02.tsv 
+  241  grep -io great amazon_reviews_us_Books_v1_02.tsv > count_great.txt
+  242  wc count_great.txt 
+  243  echo #HOME
+  244  echo $HOME
+  245  echo $UID
+  246  printenv
+  247  env
+  248  ls -a
+  249  cat .bashrc
+  250  cd /etc
+  251  cd group
+  252  ls
+  253  cat group
+  254  whoami
+  255  cd ~
+  256  id username
+  257  id bui
+  258  ls
+  259  ls -a
+  260  cat .profile
+  261  id
+  262  id -g
+  263  cd /etc
+  264  cat group
+  265  cd ~
+  266  mkdir temp
+  267  chmod man
+  268  man chmod
+  269  stat temp
+  270  chmod 677 temp
+  271  stat temp
+  272  cd temp
+  273  ls -l
+  274  cd temp
+  275  ls temp
+  276  ls -l temp
+  277  touch testfile.txt temp
+  278  ls temp
+  279  ls -l temp
+  280  ls
+  281  rm testfile.txt 
+  282  touch temp/testfile.txt
+  283  touch ~/ temp/testfile.txt
+  284  touch ~/temp/testfile.txt
+  285  mv temp worksheets
+  286  ls
+  287  cd worksheets/
+  288  ls
+  289  cp temp temp2
+  290  cp -r temp temp2
+  291  ls
+  292  cd temp2
+  293  ls
+  294  cd /proc
+  295  ls
+  296  grep mem
+  297  grep mem pwd
+  298  cd..
+  299  cd ..
+  300  ls
+  301  grep cpu proc
+  302  grep -r cpu proc
+  303  clear
+  304  cd proc/
+  305  ls
+  306  grep -l cpu
+  307  man grep
+  308  cd ..
+  309  grep -l proc
+  310  grep -l cpu proc
+  311  cd proc/
+  312  head meminfo
+  313  tail cpuinfo
+  314  cd ~
+  315  stat amazon_reviews_us_Books_v1_02.tsv 
+  316  man stat
+  317  grep size `man stat`
+  318  man stat
+  319  man stat -s
+  320  stat %s amazon_reviews_us_Books_v1_02.tsv 
+  321  stat -s amazon_reviews_us_Books_v1_02.tsv 
+  322  fstat amazon_reviews_us_Books_v1_02.tsv 
+  323  grep -i great amazon_reviews_us_Books_v1_02.tsv > tempfile.txt
+  324  man wc
+  325  wc great tempfile.txt 
+  326  cat tempfile.txt 
+  327  grep -io great amazon_reviews_us_Books_v1_02.tsv > tempfile.txt
+  328  man grep
+  329  cat amazon_reviews_us_Books_v1_02.tsv 
+  330  grep -io "sex in the city" amazon_reviews_us_Books_v1_02.tsv > temp.txt
+  331  cat temp.xt
+  332  cat temp.txt
+  333  ls
+  334  rm temp.txt
+  335  clear
+  336  cd worksheets/
+  337  ls
+  338  rm -r temp
+  339  rm -r temp2
+  340  ls
+  341  mkdir a1
+  342  cd ..
+  343  ls
+  344  rm tempfile.txt 
+  345  clear
+  346  script a1.txt
+  347  less a1.txt 
+  348  nano a1.txt 
+  349  perl -pe 's/\x1b\[[0-9;]*[mG]//g' a.txt > a.txt.clean
+  350  perl -pe 's/\x1b\[[0-9;]*[mG]//g' a1.txt > a1.txt.clean
+  351  ls
+  352  nano a1.txt.clean
+  353  tr -cd '\11\12\15\40-\176' < a1.txt.clean > a1.txt.clean2
+  354  nano a1.txt.clean2
+  355  sed -i "s/^M//g" a1.txt.clean2
+  356  nano a1.txt.clean2
+  357  ls
+  358  cd worksheets/
+  359  ls
+  360  cat a1.txt 
+  361  exit
+  362  ls
+  363  cat count_great.txt 
+  364  clear
+  365  cd worksheets/
+  366  ls
+  367  nano a1.txt 
+  368  ls
+  369  cat a1.txt 
+  370  cd /proc
+  371  cat meminfo 
+  372  head meminfo
+  373  cd ~
+  374  cd worksheets/
+  375  nano a1.txt
+  376  cd ..
+  377  man grep
+  378  grep -ic great amazon_reviews_us_Books_v1_02.tsv 
+  379  cat amazon_reviews_us_Books_v1_02.tsv 
+  380  cat /proc/cpuinfo | grep "flags\| lm "
+  381  lscpu
+  382  hostnamect1
+  383  buict1
+  384  uname -a
+  385  uname -p
+  386  man grep
+  387  touch test.txt
+  388  nano test.txt
+  389  grep -ioc test test.txt 
+  390  grep -ic test test.txt 
+  391  nano test.txt
+  392  grep -ic test test.txt 
+  393  grep -ioc test test.txt 
+  394  cd worksheets/
+  395  ls
+  396  nano a1.txt 
+  397  cd a1
+  398  cd ..
+  399  rm -r a1
+  400  cd ..
+  401  mkdir assignments
+  402  ls
+  403  cat a.txt.clean 
+  404  rm a.txt.clean 
+  405  mv a1.txt a1.txt.original
+  406  ls
+  407  nano a1.txt.original
+  408  nano test.txt 
+  409  cd assignments/
+  410  mkdir a1
+  411  cd a1/
+  412  git init
+  413  cd ..
+  414  mv a1.txt.clean assignments/a1
+  415  mv a1.txt.clean2 assignments/a1
+  416  mv a1.txt.original assignments/a1
+  417  mv count_great.txt assignments/a1
+  418  mv test.txt assignments/a1
+  419  ls
+  420  ls
+  421  mv temp assignments/a1
+  422  ls
+  423  mv temp2 assignments/a1
+  424  mv temp ~/assignments/a1
+  425  mv temp2 ~/assignments/a1
+  426  ls
+  427  mv a1.txt ~/assignments/a1
+  428  ls
+  429  cd ..
+  430  cd assignments/
+  431  ls
+  432  cd a1
+  433  ls
+  434  nano a1.txt
+  435  git add a1.txt
+  436  git status
+  437  git commit -m "A text file answering questions for Assignment 1. Cleaned up the extra bytes and characters from the script command and added explanations to make answers more thorough and clear."
+  438  git status
+  439  git remote add origin https://github.com/tkbui/a1.git
+  440  git push -u origin master
+  441  cd ..
+  442  ls
+  443  cd ..
+  444  ls
+  445  exit
+  446  sort amazon_reviews_us_Books_v1_02.tsv > test_sort.txt
+  447  nano test_sort.txt 
+  448  head test_sort.txt 
+  449  cat amazon_reviews_us_Books_v1_02.tsv 
+  450  sort -k 2 amazon_reviews_us_Books_v1_02.tsv > test_sort_cid.txt
+  451  sort -k 4 amazon_reviews_us_Books_v1_02.tsv > test_sort_product.txt
+  452  sort -k 9 amazon_reviews_us_Books_v1_02.tsv > test_sort_helpfulness.txt
+  453  head test_sort_product.txt 
+  454  head test_sort_helpfulness.txt 
+  455  sort -k 9nr amazon_reviews_us_Books_v1_02.tsv > test_sort_helpfulness.txt
+  456  head test_sort_helpfulness.txt 
+  457  exit
+  458  cut -f 2 amazon_reviews_us_Books_v1_02.tsv > customerids.txt
+  459  head customerids.txt 
+  460  uniq -c customerids.txt > customerids.txt.uniqcounts 
+  461  head customerids.txt.uniqcounts 
+  462  sort -nk1 --reverse customerids.txt.uniqcounts > customerids.txt.uniqcounts.sorted 
+  463  head customerids.txt.uniqcounts.sorted 
+  464  cut -f 2 amazon_reviews_us_Books_v1_02.tsv > customerids.txt
+  465  head -n 1 amazon_reviews_us_Books_v1_02.tsv 
+  466  cut -f 4 amazon_reviews_us_Books_v1_02.tsv > productids.txt
+  467  cut -f 9 amazon_reviews_us_Books_v1_02.tsv > helpfulness.txt
+  468  wc customerids.txt 
+  469  wc productids.txt 
+  470  wc helpfulness.txt 
+  471  sort customerids.txt > customerids.txt.sorted
+  472  uniq -c customerids.txt.sorted > customerids.txt.sorted.uniqcounts
+  473  sort -nk1 --reverse customerids.txt.sorted.uniqcounts > customerids.txt.sorted.uniqcounts.reversed
+  474  head customerids.txt.sorted.uniqcounts.reversed 
+  475  sort productids.txt > productids.txt.sorted
+  476  uniq -c productids.txt.sorted > productids.txt.sorted.uniqcounts
+  477  sort -nk1 --reverse productids.txt.sorted.uniqcounts > productids.txt.sorted.uniqcounts.reversed
+  478  head productids.txt.sorted.uniqcounts.reversed 
+  479  sort helpfulness.txt > helpfulness.txt.sorted
+  480  uniq -c helpfulness.txt.sorted > helpfulness.txt.sorted.uniqcounts
+  481  sort -nk1 --reverse helpfulness.txt.sorted.uniqcounts > helpfulness.txt.sorted.uniqcounts.reversed
+  482  head helpfulness.txt.sorted.uniqcounts.reversed 
+  483  head helpfulness.txt.sorted.uniqcounts
+  484  nano helpfulness.txt.sorted.uniqcounts.reversed 
+  485  head helpfulness.txt
+  486  head -n 1 amazon_reviews_us_Books_v1_02.tsv
+  487  cut -f 2 amazon_reviews_us_Books_v1_02.tsv > customerids.txt
+  488  cut -f 4 amazon_reviews_us_Books_v1_02.tsv > productids.txt
+  489  cut -f 9 amazon_reviews_us_Books_v1_02.tsv > helpfulness.txt
+  490  wc customerids.txt
+  491  wc productids.txt
+  492  wc helpfulness.txt
+  493  sort customerids.txt > customerids.txt.sorted
+  494  uniq -c customerids.txt.sorted > customerids.txt.sorted.uniqcounts
+  495  sort -nk1 --reverse customerids.txt.sorted.uniqcounts > customerids.txt.sorted.uniqcounts.reversed
+  496  head customerids.txt.sorted.uniqcounts.reversed
+  497  sort productids.txt > productids.txt.sorted
+  498  uniq -c productids.txt.sorted > productids.txt.sorted.uniqcounts
+  499  sort -nk1 --reverse productids.txt.sorted.uniqcounts > productids.txt.sorted.uniqcounts.reversed
+  500  head productids.txt.sorted.uniqcounts.reversed
+  501  sort helpfulness.txt > helpfulness.txt.sorted
+  502  uniq -c helpfulness.txt.sorted > helpfulness.txt.sorted.uniqcounts
+  503  sort -nk1 --reverse helpfulness.txt.sorted.uniqcounts > helpfulness.txt.sorted.uniqcounts.reversed
+  504  head helpfulness.txt.sorted.uniqcounts.reversed
+  505  history > cmds.log
+  506  ls
+  507  script ws3.txt
+  508  less ws3.txt 
+  509  mv ws3.txt ws3.txt.original
+  510  ls
+  511  perl -pe 's/\x1b\[[0-9;]*[mG]//g' ws3.txt.original > ws3.txt.original.clean
+  512  tr -cd '\11\12\15\40-\176' < ws3.txt.original.clean > ws3.txt
+  513  sed -i "s/^M//g" ws3.txt
+  514  ls
+  515  nano ws3.txt
+  516  cat cmds.log 
+  517  nano ws3.txt
+  518  head -n 3 customerids.txt.sorted.uniqcounts.reversed 
+  519  nano ws3.txt
+  520  ls
+  521  mv ws3.txt worksheets/ws3
+  522  mv cmds.log worksheets/ws3
+  523  cd worksheets/
+  524  cd ws3
+  525  ls
+  526  git status
+  527  git add .
+  528  git status
+  529  git commit -m "Worksheet 3 - used cut, uniq -c, and sort on the Amazon dataset to answer given questions. NOTE: For cmds.log, commands for this run of the script starts on line 486."
+  530  git remote add origin https://github.com/tkbui/ws3.git
+  531  git push -u origin master
+  532  cd ..
+  533  ls
+  534  mv customerids.txt worksheets/ws3
+  535  mv customerids.txt.sorted worksheets/ws3
+  536  mv customerids.txt.sorted.uniqcounts worksheets/ws3
+  537  mv customerids.txt.sorted.uniqcounts.reversed worksheets/ws3
+  538  mv productids.txt  worksheets/ws3
+  539  mv productids.txt.sorted worksheets/ws3
+  540  mv productids.txt.sorted.uniqcounts worksheets/ws3
+  541  mv productids.txt.sorted.uniqcounts.reversed worksheets/ws3
+  542  ls
+  543  mv helpfulness.txt worksheets/ws3
+  544  mv helpfulness.txt.sorted worksheets/ws3
+  545  mv helpfulness.txt.sorted.uniqcounts worksheets/ws3
+  546  mv helpfulness.txt.sorted.uniqcounts.reversed worksheets/ws3
+  547  ls
+  548  mv ws3.txt.original worksheets/ws3
+  549  mv ws3.txt.original.clean worksheets/ws3
+  550  ls
+  551  cd worksheets/
+  552  cd ws3
+  553  ls
+  554  git status
+  555  exit
+  556  mkdir CUSTOMERS
+  557  mkdir PRODUCTS
+  558  cut -f 2 amazon_reviews_us_Books_v1_02.tsv | head
+  559  head -n 1 amazon_reviews_us_Books_v1_02.tsv 
+  560  cut -f 9 amazon_reviews_us_Books_v1_02.tsv | head
+  561  cut -f 4 amazon_reviews_us_Books_v1_02.tsv | head
+  562  egrep $'\t''12076615'$'\t' amazon_reviews_us_Books_v1_02.tsv > CUSTOMERS/12076615.txt
+  563  egrep $'\t''12703090'$'\t' amazon_reviews_us_Books_v1_02.tsv > CUSTOMERS/12703090.txt
+  564  egrep $'\t''12257412'$'\t' amazon_reviews_us_Books_v1_02.tsv > CUSTOMERS/12257412.txt
+  565  egrep $'\t''0385730586'$'\t' amazon_reviews_us_Books_v1_02.tsv > PRODUCTS/0385730586.txt
+  566  egrep $'\t''0811828964'$'\t' amazon_reviews_us_Books_v1_02.tsv > PRODUCTS/0811828964.txt
+  567  egrep $'\t''1844161560'$'\t' amazon_reviews_us_Books_v1_02.tsv > PRODUCTS/1844161560.txt
+  568  cd CUSTOMERS/
+  569  ls
+  570  cut -f 9 12076615.txt > 12076615.helpfulness.txt 
+  571  cut -f 9 12257412.txt > 12257412.helpfulness.txt 
+  572  cut -f 9 12703090.txt > 12703090.helpfulness.txt 
+  573  echo $count
+  574  count=0; total=0;
+  575  echo $count
+  576  for i in `cat 12076615.helpfulness.txt`; do total=$(echo $total+$i | bc ); ((count++)); done
+  577  echo $count
+  578  cat 12076615.
+  579  cat 12076615.txt
+  580  echo "scale=2; $total / $count" | bc
+  581  count=0; total=0;
+  582  for i in `cat 12703090.helpfulness.txt`; do total=$(echo $total+$i | bc ); ((count++)); done
+  583  cat 12703090.txt
+  584  cat 12257412.txt
+  585  mkdir CUSTOMERS
+  586  mkdir PRODUCTS
+  587  egrep $'\t''52420369'$'\t' amazon_reviews_us_Books_v1_02.tsv | cut -f 9 > CUSTOMERS/52420369.txt
+  588  head -n 2 CUSTOMERS/52420369.txt 
+  589  egrep $'\t''52420369'$'\t' amazon_reviews_us_Books_v1_02.tsv | head -n 2 > CUSTOMERS/52420369.txt
+  590  egrep $'\t''52420369'$'\t' amazon_reviews_us_Books_v1_02.tsv | head -n 2
+  591  head -n 2 CUSTOMERS/52420369.txt 
+  592  egrep $'\t''52420369'$'\t' amazon_reviews_us_Books_v1_02.tsv | cut -f 9 > CUSTOMERS/52420369.txt
+  593  head -n 2 CUSTOMERS/52420369.txt 
+  594  head -n 4 CUSTOMERS/52420369.txt 
+  595  egrep $'\t''52420369'$'\t' amazon_reviews_us_Books_v1_02.tsv | head -n 4
+  596  egrep $'\t''51964897'$'\t' amazon_reviews_us_Books_v1_02.tsv | cut -f 9 > CUSTOMERS/51964897.txt
+  597  egrep $'\t''51964897'$'\t' amazon_reviews_us_Books_v1_02.tsv | head -n 4
+  598  head -n 4 CUSTOMERS/51964897.txt 
+  599  egrep $'\t''53000124'$'\t' amazon_reviews_us_Books_v1_02.tsv | cut -f 9 > CUSTOMERS/53000124.txt
+  600  egrep $'\t''0385730586'$'\t' amazon_reviews_us_Books_v1_02.tsv | cut -f 9 > PRODUCTS/0385730586.txt
+  601  egrep $'\t''0811828964'$'\t' amazon_reviews_us_Books_v1_02.tsv | cut -f 9 > PRODUCTS/0811828964.txt
+  602  egrep $'\t''1844161560'$'\t' amazon_reviews_us_Books_v1_02.tsv | cut -f 9 > PRODUCTS/1844161560.txt
+  603  ls
+  604  cd CUSTOMERS/
+  605  ls
+  606  ls -altr
+  607  count=0; total=0;
+  608  for i in `cat 52420369.txt`; do total=$(echo $total+$i | bc ); ((count++)); done
+  609  echo $total
+  610  echo $count
+  611  echo "scale=2; $total / $count" | bc
+  612  count=0; total=0;
+  613  for i in `cat 52420369.txt`; do total=$(echo $total+($i-1.76)^2 | bc ); ((count++)); done
+  614  echo $total
+  615  echo $count
+  616  echo "scale=2; $total / ($count - 1)" | bc
+  617  count=0; total=0;
+  618  for i in `cat 51964897.txt`; do total=$(echo $total+$i | bc ); ((count++)); done
+  619  echo $total
+  620  echo $count
+  621  echo "scale=2; $total / $count" | bc
+  622  count=0; total=0;
+  623  for i in `cat 51964897.txt`; do total=$(echo $total+($i-31.62)^2 | bc ); ((count++)); done
+  624  echo $total
+  625  echo $count
+  626  echo "scale=2; $total / ($count - 1)" | bc
+  627  count=0; total=0;
+  628  for i in `cat 53000124.txt`; do total=$(echo $total+$i | bc ); ((count++)); done
+  629  echo $total
+  630  echo $count
+  631  echo "scale=2; $total / $count" | bc
+  632  count=0; total=0;
+  633  echo $count
+  634  for i in `cat 53000124.txt`; do total=$(echo $total+($i-11.19)^2 | bc ); ((count++)); done
+  635  echo $count
+  636  echo $total
+  637  echo "scale=2; $total / ($count - 1)" | bc
+  638  count=0; total=0;
+  639  cd ..
+  640  cd PRODUCTS/
+  641  echo $total
+  642  ls
+  643  for i in `cat 0385730586.txt`; do total=$(echo $total+$i | bc ); ((count++)); done
+  644  echo $total
+  645  echo $count
+  646  echo "scale=2; $total / $count" | bc
+  647  count=0; total=0;
+  648  echo $count
+  649  for i in `cat 0385730586.txt`; do total=$(echo $total+($i-1.86)^2 | bc ); ((count++)); done
+  650  echo $count
+  651  echo "scale=2; $total / ($count - 1)" | bc
+  652  count=0; total=0;
+  653  echo $count
+  654  for i in `cat 0811828964.txt`; do total=$(echo $total+$i | bc ); ((count++)); done
+  655  echo $count
+  656  echo $total
+  657  echo "scale=2; $total / $count" | bc
+  658  count=0; total=0;
+  659  echo $count
+  660  for i in `cat 0811828964.txt`; do total=$(echo $total+($i-3.60)^2 | bc ); ((count++)); done
+  661  echo $count
+  662  echo "scale=2; $total / ($count - 1)" | bc
+  663  count=0; total=0;
+  664  echo $count
+  665  for i in `cat 1844161560.txt`; do total=$(echo $total+$i | bc ); ((count++)); done
+  666  echo $count
+  667  echo "scale=2; $total / $count" | bc
+  668  echo $total
+  669  count=0; total=0;
+  670  for i in `cat 1844161560.txt`; do total=$(echo $total+($i-20.70)^2 | bc ); ((count++)); done
+  671  echo $count
+  672  echo "scale=2; $total / ($count - 1)" | bc
+  673  cd ..
+  674  history > cmds.log
